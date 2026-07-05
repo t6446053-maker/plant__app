@@ -11,7 +11,6 @@ class UserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.White,
-
       appBar: AppBar(
         backgroundColor: AppColors.White,
         centerTitle: true,
@@ -26,58 +25,27 @@ class UserScreen extends StatelessWidget {
           ),
         ),
       ),
-
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 40.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 40.0.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               SizedBox(height: 30.h),
-
+              SizedBox(height: 30.h),
               _buildProfileHeader(),
-
-               SizedBox(height: 40.h),
-
+              SizedBox(height: 40.h),
               const TextFeldCheckOut(hintText: 'Email'),
-
-               SizedBox(height: 20.h),
-
-              _buildMenuItem(
-                context,
-                "Edit Information",
-                AppRoutes.editInformation,
-              ),
-
-              _buildMenuItem(
-                context,
-                "Planting Guide",
-                AppRoutes.plantingGuide,
-              ),
-
-              _buildMenuItem(
-                context,
-                "Transaction History",
-                AppRoutes.transactionHistory,
-              ),
-
-              _buildMenuItem(
-                context,
-                "Q & A",
-                AppRoutes.faqs,
-              ),
-
-               SizedBox(height: 10.h),
-
-               TextFeldCheckOut(hintText: 'Security'),
-
-               SizedBox(height: 20.h),
-
+              SizedBox(height: 20.h),
+              _buildMenuItem(context, "Edit Information", AppRoutes.editInformation),
+              _buildMenuItem(context, "Planting Guide", AppRoutes.plantingGuide),
+              _buildMenuItem(context, "Transaction History", AppRoutes.transactionHistory),
+              _buildMenuItem(context, "Q & A", AppRoutes.faqs),
+              SizedBox(height: 10.h),
+              const TextFeldCheckOut(hintText: 'Security'),
+              SizedBox(height: 20.h),
               _buildMenuText("Terms and Policy"),
               _buildMenuText("Security Policy"),
-
-               SizedBox(height: 20.h),
-
+              SizedBox(height: 20.h),
               _buildLogout(context),
             ],
           ),
@@ -86,7 +54,6 @@ class UserScreen extends StatelessWidget {
     );
   }
 
-  // 🔹 Profile header
   Widget _buildProfileHeader() {
     return Row(
       children: [
@@ -95,7 +62,7 @@ class UserScreen extends StatelessWidget {
           backgroundColor: AppColors.Black,
           child: const Icon(Icons.person, color: Colors.white),
         ),
-         SizedBox(width: 20.w),
+        SizedBox(width: 20.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -121,7 +88,6 @@ class UserScreen extends StatelessWidget {
     );
   }
 
-  // 🔹 Navigation item
   Widget _buildMenuItem(BuildContext context, String text, String route) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
@@ -139,13 +105,11 @@ class UserScreen extends StatelessWidget {
     );
   }
 
-  // 🔹 Simple text item
   Widget _buildMenuText(String text) {
     return Padding(
-      padding:  EdgeInsets.only(bottom: 15.h),
+      padding: EdgeInsets.only(bottom: 15.h),
       child: Text(
-                 "Terms and Policy",
-
+        text,
         style: TextStyle(
           color: AppColors.Black,
           fontSize: 20,
@@ -161,7 +125,7 @@ class UserScreen extends StatelessWidget {
         Navigator.pushNamedAndRemoveUntil(
           context,
           AppRoutes.login,
-          (ro) => false,
+          (route) => false,
         );
       },
       child: Text(
