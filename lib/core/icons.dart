@@ -1,5 +1,4 @@
 class AppIcons {
-  AppIcons._();
 
   static const String _basePath = 'assets/Icons/';
 
