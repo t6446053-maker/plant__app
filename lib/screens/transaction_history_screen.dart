@@ -41,7 +41,6 @@ class TransactionHistoryScreen extends StatelessWidget {
     );
   }
 
-  // ================= APP BAR =================
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CoustomAppBar(
       title: "TRANSACTION HISTORY",
@@ -60,7 +59,6 @@ class TransactionHistoryScreen extends StatelessWidget {
     );
   }
 
-  // ================= DATE TITLE =================
   Widget _dateTitle(String text) {
     return Padding(
       padding: const EdgeInsets.only(top: 25),
@@ -74,7 +72,6 @@ class TransactionHistoryScreen extends StatelessWidget {
     );
   }
 
-  // ================= ORDER ITEM =================
   Widget _orderItem(
     BuildContext context, {
     required String status,
