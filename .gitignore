@@ -1,0 +1,16 @@
+.dart_tool/
+build/
+.idea/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Misc
+*.log
+*.tmp
+
+# Android Studio
+*.iml
+
+# macOS
+.DS_Store
