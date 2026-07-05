@@ -10,6 +10,7 @@ import 'package:plt/widgets/coustom_app_bar.dart';
 import 'package:plt/widgets/coustom_bottom_login.dart';
 
 class CheckoutScreen extends StatefulWidget {
+
   const CheckoutScreen({super.key});
 
   @override
@@ -46,7 +47,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 textSize: 20,
                 redus: 5,
               ),
-              SizedBox(height:20.h),
+              SizedBox(height: 20.h),
               CustomBottomNotNow(
                 text: "Cancel",
                 textColor: AppColors.Black,
@@ -65,7 +66,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       text,
       style: TextStyle(
         color: AppColors.Black,
-        fontSize: 18.sp, // صغرنا حجم الخط حاجة بسيطة عشان يلم المساحة
+        fontSize: 18.sp,
         fontWeight: FontWeight.bold,
       ),
     );
@@ -92,13 +93,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w), // لمينا الحواف شوية
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20.h), // صغرنا المسافة فوق
-
-              // --- Personal Information ---
+              SizedBox(height: 20.h),
               _buildSectionTitle("Personal Information"),
               SizedBox(height: 3.h),
               const Divider(color: Colors.black12, thickness: 1),
@@ -106,10 +105,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               TextFeldCheckOut(hintText: "tmtri310251@gmail.com"),
               TextFeldCheckOut(hintText: "Address"),
               TextFeldCheckOut(hintText: "Phone Number"),
-
-              SizedBox(height: 20.h), // مسافة ملمومة
-
-              // --- Delivery Method ---
+              SizedBox(height: 20.h),
               _buildSectionTitle("Delivery Method"),
               SizedBox(height: 3.h),
               const Divider(color: Colors.black12, thickness: 1),
@@ -122,12 +118,23 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     children: [
                       Text(
                         "Quick Shipping - \$15",
-                        style: TextStyle(color: AppColors.PrimaryGreen, fontSize: 15.sp, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          color: AppColors.PrimaryGreen,
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                      Text("Expected Shipping Date: May 5th", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
+                      Text(
+                        "Expected Shipping Date: May 5th",
+                        style: TextStyle(
+                          color: AppColors.grey,
+                          fontSize: 13.sp,
+                        ),
+                      ),
                     ],
                   ),
-                  const Icon(Icons.check, color: AppColors.PrimaryGreen, size: 18),
+                  const Icon(Icons.check,
+                      color: AppColors.PrimaryGreen, size: 18),
                 ],
               ),
               SizedBox(height: 8.h),
@@ -138,15 +145,22 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 children: [
                   Text(
                     "COD - \$20",
-                    style: TextStyle(color: AppColors.Black, fontSize: 15.sp, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      color: AppColors.Black,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  Text("Expected Shipping Date: May 13th", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
+                  Text(
+                    "Expected Shipping Date: May 13th",
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 13.sp,
+                    ),
+                  ),
                 ],
               ),
-
               SizedBox(height: 20.h),
-
-              // --- Payment Method ---
               _buildSectionTitle("Payment Method"),
               SizedBox(height: 3.h),
               const Divider(color: Colors.black12, thickness: 1),
@@ -156,47 +170,80 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 children: [
                   Text(
                     "VISA / MASTERCARD",
-                    style: TextStyle(color: AppColors.PrimaryGreen, fontSize: 14.sp, fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      color: AppColors.PrimaryGreen,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                  const Icon(Icons.check, color: AppColors.PrimaryGreen, size: 18),
+                  const Icon(Icons.check,
+                      color: AppColors.PrimaryGreen, size: 18),
                 ],
               ),
               SizedBox(height: 5.h),
               const Divider(color: Colors.black12, thickness: 1),
-              
               SizedBox(height: 20.h),
-
-              // --- الحسابات والـ Total ---
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Subtotal", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
-                  Text("\$500", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
-                ],
-              ),
-              SizedBox(height: 3.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Delivery Fee", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
-                  Text("\$15", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
-                ],
-              ),
-              SizedBox(height: 3.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Total", style: TextStyle(color: AppColors.grey, fontSize: 13.sp)),
                   Text(
-                    "\$515",
-                    style: TextStyle(color: AppColors.PrimaryGreen, fontSize: 14.sp, fontWeight: FontWeight.bold),
+                    "Subtotal",
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 13.sp,
+                    ),
+                  ),
+                  Text(
+                    "\$500",
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 13.sp,
+                    ),
                   ),
                 ],
               ),
-
-              SizedBox(height: 20.h), // مسافة مناسبة للزرار
-
-              // --- زرار الـ Continue يظهر هنا علطول ---
+              SizedBox(height: 3.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Delivery Fee",
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 13.sp,
+                    ),
+                  ),
+                  Text(
+                    "\$15",
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 13.sp,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 3.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Total",
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 13.sp,
+                    ),
+                  ),
+                  Text(
+                    "\$515",
+                    style: TextStyle(
+                      color: AppColors.PrimaryGreen,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.h),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.PrimaryGreen,
@@ -209,7 +256,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 onPressed: _showConfirmSheet,
                 child: const Text(
                   "CONTINUE",
-                  style: TextStyle(color: AppColors.White, fontWeight: FontWeight.bold , fontSize: 20),
+                  style: TextStyle(
+                    color: AppColors.White,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               SizedBox(height: 20.h),
